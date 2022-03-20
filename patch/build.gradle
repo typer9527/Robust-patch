@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = GROUP
+version = VERSION_NAME
+
+//project.archivesBaseName = 'robust'
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.2'
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 24
+        versionCode 1
+        versionName '1.0'
+    }
+    buildTypes {
+        release {
+            consumerProguardFiles 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
+        exclude 'META-INF/maven/commons-cli/commons-cli/pom.properties'
+        exclude 'META-INF/maven/commons-cli/commons-cli/pom.xml'
+    }
+}
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+dependencies {
+    implementation 'com.github.typer9527.Robust-gradle:autopatchbase:442df442c2'
+}
+
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: "file://C://Users/m1505/AndroidProjects/.m2/repository/")
+//            pom.version = "0.5.0"
+//            pom.artifactId = "patch-local"
+//            pom.groupId = "com.meituan.robust"
+//        }
+//    }
+//}
+
+//apply from: '../gradle_mvn_push.gradle'

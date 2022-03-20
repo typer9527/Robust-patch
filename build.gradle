@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.31'
+    repositories {
+        mavenLocal()
+        maven { url "https://mvnrepository.com/" }
+        jcenter()
+        google()
+        maven { url 'https://www.jitpack.io' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath 'com.github.typer9527.Robust-gradle:gradle-plugin:442df442c2'
+        classpath 'com.github.typer9527.Robust-gradle:auto-patch-plugin:442df442c2'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
+    }
+    configurations.classpath.exclude group: 'com.android.tools.external.lombok'
+}
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+allprojects {
+    repositories {
+        mavenLocal()
+        maven { url "https://mvnrepository.com/" }
+        maven { url "http://depot.sankuai.com/nexus/content/groups/public/" }
+        jcenter()
+        google()
+        maven { url 'https://www.jitpack.io' }
+    }
+    tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
