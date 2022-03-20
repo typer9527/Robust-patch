@@ -98,7 +98,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.liulishuo.filedownloader:library:1.7.7'
 
-    api 'com.meituan.robust:patch-local:0.5.0'
+    implementation project(path: ':patch')
 }
 repositories {
     mavenCentral()
