@@ -14,8 +14,8 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'com.github.typer9527.Robust-gradle:gradle-plugin:442df442c2'
-        classpath 'com.github.typer9527.Robust-gradle:auto-patch-plugin:442df442c2'
+        classpath 'com.github.typer9527.Robust-gradle:gradle-plugin:d740037307'
+        classpath 'com.github.typer9527.Robust-gradle:auto-patch-plugin:d740037307'
         classpath 'me.tatarka:gradle-retrolambda:3.2.0'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
